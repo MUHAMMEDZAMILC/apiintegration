@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
-final homeappbar = AppBar(
-  title: const Text('REST API'),
-);
+class Utitlity {
+  static PreferredSizeWidget buildAppBar(BuildContext context, String title) {
+    return AppBar(
+      title: Text(title),
+      actions: [IconButton(onPressed: () {}, icon: Icon(Icons.notifications))],
+    );
+  }
+}

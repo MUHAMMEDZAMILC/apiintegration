@@ -66,21 +66,7 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: homeappbar,
-        actions: [
-          InkWell(
-            child: const Icon(
-              Icons.notifications,
-              color: kwhite,
-            ),
-            onTap: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => NotificationPage()));
-            },
-          )
-        ],
-      ),
+      appBar: Utitlity.buildAppBar(context, "Rest Api"),
       body: Container(
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
