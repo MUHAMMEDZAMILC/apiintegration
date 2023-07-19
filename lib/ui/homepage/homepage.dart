@@ -17,41 +17,11 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   List<User>? user;
   var isLoaded = false;
-  int count = 0;
-  FirebaseNotification? firebase;
-  hanldeAsync() async {
-    await firebase?.initilize();
-    Future<String?> token = firebase!.getToken();
-    print("Firebase token : ${token}");
-  }
-
   @override
   void initState() {
     super.initState();
     // fetch data from API
     getData();
-
-    firebase = FirebaseNotification();
-    firebase!.initilize();
-    FirebaseMessaging.onMessageOpenedApp.listen((message) {
-      print('Message clicked!');
-      Navigator.pushAndRemoveUntil(
-          context,
-          MaterialPageRoute(builder: (context) => NotificationPage()),
-          (route) => false);
-    });
-    hanldeAsync();
-    // FirebaseMessaging.onMessage.listen((RemoteMessage event) {
-    //   print("message recieved");
-    //   print(event.notification!.body);
-    // });
-    // FirebaseMessaging.onMessageOpenedApp.listen((message) {
-    //   print('Message clicked!');
-    //   Navigator.pushAndRemoveUntil(
-    //       context,
-    //       MaterialPageRoute(builder: (context) => NotificationPage()),
-    //       (route) => false);
-    // });
   }
 
   Future getData() async {
