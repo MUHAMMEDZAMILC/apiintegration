@@ -1,10 +1,7 @@
 import 'package:apiintegration/internal/componets/appbars.dart';
 import 'package:apiintegration/internal/constants/colors.dart';
 import 'package:apiintegration/models/user.dart';
-import 'package:apiintegration/pushnotication.dart';
 import 'package:apiintegration/services/remote_service.dart';
-import 'package:apiintegration/ui/homepage/notificationpage.dart';
-import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
